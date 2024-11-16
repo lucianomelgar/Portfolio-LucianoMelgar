@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Titulo de pestaña -->
+    <title>Luciano Melgar Portfolio</title>
+    <!-- Imagen de pestaña -->
+    <link rel="icon" href="assets/logoLM.png" type="png"> 
+    <!-- linkeo con archivo CSS -->
+    <link rel="stylesheet" href="CSS/style.css">
+
+    <!-- importación de iconos Boxicons -->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+    <!-- Importación de iconos remixicon-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- Linkeo de GoogleFonts -->
+    <!-- RebotoMono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <!-- Monserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- cabecera y barra de navegación -->
+    <header>
+
+        <!-- Logo -->
+        <a href="#" class="logo">Luciano Melgar</a>
+
+        <!-- boton clickeable sin JS -->
+        <input type="checkbox" name="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="menu-icon-action">
+            <div class='bx bx-menu' id="menu-icon"></div>
+        </label>
+
+        
+        <!-- botonera -->
+        <ul class="navlist">
+            <li><a href="#">Home </a></li>
+            <li><a href="#sobre-mi">Sobre mi </a></li>
+            <li><a href="#">Portfolio </a></li>
+            <li><a href="#contacto">Contacto </a></li>
+        </ul>
+    </header>
+    
+    <!-- Hero section -->
+    <section class="hero">
+        <div class="hero-text">
+            <h5>Diseñador UX/UI</h5>
+            <h4>Front End Developer</h4>
+            <h1>Luciano Melgar</h1>
+
+            <a href="assets/cv-LucianoMelgar--.pdf" target="_blank">Curriculum</a>
+            <a href="https://www.linkedin.com/in/lucianomelgar/" target="_blank">Linkedin</a>
+        </div>
+
+        <div class="hero-img">
+            <img src="assets/foto-cv.jpeg" alt="foto-cv">
+        </div>
+    </section>
+
+    <!-- remixicon - iconos redes/ contacto-->
+    <div class="icons">
+        <!-- Mail -->
+        <a href="#contacto"><i class="ri-mail-send-line"></i></a>
+        <!-- WhatsApp -->
+        <a href="https://wa.me/541123908529" target="_blank"><i class="ri-whatsapp-line"></i></a>
+        <!-- GitHub -->
+        <a href="https://github.com/lucianomelgar" target="_blank"><i class="ri-github-fill"></i></a>
+    </div>
+
+    <div class="scroll-down">
+        <a href="#footer"><i class="ri-arrow-down-s-line"></i></a>
+    </div>
+
+    <div class="sobre-mi" id="sobre-mi">
+        <h3>Sobre mi</h3> <br>
+
+        <p>
+        Mi nombre es Luciano Melgar, soy Programador, Diseñador Web y Soporte Técnico. <br>
+        Actualmente me encuentro estudiando la carrera de Ingeniría Informática en la Universidad Nacional Arturo Jauretche de Florencio Varela. <br>
+        De forma paralela, estoy especializandome en Desarrollo Front-End, realizando el curso Professional Developer de #DigitalHouse. <br>
+
+        </p>
+    </div>
+
+    <!-- PORTAFOLIO -->
+    <div class="portfolio">
+
+    </div>
+    
+    <!-- CONTACTO - ENVIO DE MAIL -->
+
+    <div class="contacto" id="contacto" >
+        <h3>Contacto</h3> <br>
+
+        <!-- <form action="http://localhost:3001/send-email" method="POST"> -->
+        <form id="contactForm">
+            <div class="form-group">
+                <label for="email">Mail Emisor</label>
+                <input type="email" id="email" name="email" required placeholder="Ingresa tu correo">
+            </div>
+
+            <div class="form-group">
+                <label for="asunto">Asunto</label>
+                <input type="text" id="asunto" name="asunto" required placeholder="Ingresa el asunto">
+            </div>
+
+            <div class="form-group">
+                <label for="mensaje">Mensaje</label>
+                <textarea id="mensaje" name="mensaje" rows="4" placeholder="Escribe tu mensaje aquí"></textarea>
+            </div>
+
+            <div class="form-group">
+                <button type="submit">Enviar</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Popup de confirmación -->
+    <div id="popup" class="popup">
+        <p>Mensaje enviado <span>&#10003;</span></p>
+    </div>
+    
+    <!-- linkeo con JS -->
+    <!-- <script src="carpeta-nodejs/server.js"></script> -->
+    <script src="JS/envio.js"></script>
+</body>
+
+<footer id="footer">
+    <p>Luciano Melgar - 2024</p>
+</footer>
+</html>

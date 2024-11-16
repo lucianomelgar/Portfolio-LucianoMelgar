@@ -1,0 +1,390 @@
+/*comportamiento del scrool aplicado a todo el documento HTML*/
+html {
+    scroll-behavior: smooth; /* Activar desplazamiento suave */
+}
+
+/* Atributos para la fuente */
+h1{
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+    
+}
+
+/* Normalización */
+/* Propiedades CSS que aplicaran a toda la pág */
+
+/*TODO EL DOC*/
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;                 /*El padding y el border no afectaran al ancho y alto del elemento*/
+    font-family: "Montserrat", sans-serif;
+    list-style: none;                       /*Quita decoración a las listas*/
+    text-decoration: none;                  /*quita subrayado de los enlaces*/
+    color: aliceblue;
+
+}
+
+/*BODY*/
+body{
+    /* background-color: rgb(36, 34, 34);  ToDo: Borrar cuando se tenga el fondo Final */
+    background: linear-gradient(245.59deg, #31494e 0%, #385e70 25%, #131313 75%); /*fondo degrade*/
+}
+
+/*HEADER*/
+header{
+    position: fixed;        /*quedara fijo el header en la parte superior*/
+    right: 0;               /*Posiciones*/
+    top: 0;
+    z-index: 100;           /*Para que el header se suporponga por encima del demas contenido*/
+    width: 100%;
+    display: flex;          /*Para acomodar elementos en linea*/
+
+    align-items: center;            /*centrado verticalmente*/
+    justify-content: space-between; /*Separación de elementos */
+    padding: 15px 3%;               /*15px eje X, 3% eje Y*/
+    background-color: transparent;
+}
+
+/* Titulo Nombre */
+.logo{
+    font-size: 30px;
+    font-weight: 600;       /*grueso de fuente*/
+}
+
+/* botonera */
+.navlist{
+    display: flex;          /*Alineación flex, en linea*/
+}
+
+.navlist a{
+    margin-left: 60px;      /*Separación de vinculos <a>*/
+    font-size: 15px;
+    font-weight: 450;
+    border-bottom: 2px solid transparent;   /*Subrayado transparente*/
+    transition: all .5s ease;               /*Todas las transiciones duraran 5 segundos, seran del tipo ease*/
+}
+
+.navlist a:hover{
+    border-bottom: 2px solid rgb(235, 232, 232);   /*Subrayado blanco cuando se pasa por encima del boton <a>*/
+}
+
+/* menu 3 lineas */
+#menu-icon{
+    display: none;          /*Solo estara en None cuando la pág este extendida, luego se activara cuando se colapse*/
+
+    font-size: 35px;
+    z-index: 101;           /*Para que este por encima del Header*/
+    cursor: pointer;        /*Manito en cursor*/
+}
+
+
+/*checkBox  */
+#menu-toggle{
+    display: none;      /*siempre estara en None*/
+}
+
+.menu-toggle-action{
+    display: none;      /*para no poder clickear*/
+}
+
+
+/*HERO SECTION*/
+.hero{
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(245.59deg, #31494e 0%, #385e70 25%, #131313 75%); /*fondo degrade*/
+
+    position: relative;                 /*Para que sea relativo al contenedor (nos permite utilizar top, bottom, left, right)*/
+    display: grid;                      /*Para poder dividir el hero en 2 columnas*/
+    grid-template-columns: 1fr 1fr;     /*2 Columnas*/
+    align-items: center;                /*alineación de forma vertical*/
+    gap: 2rem;                          /*espaciado entre columnas*/
+}
+
+section{
+    padding: 0 8%;          /*0 de alto, 8% de alto*/
+}
+
+.hero-text h5{
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+.hero-text h4{
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.hero-text h1{
+    font-size: 50px;
+    line-height: 1;
+    margin: 0 0 30px;       /*0(arriba) 0(der/izq) 30px(abajo)*/
+}
+
+.hero-img img{
+    width: 300px;
+    margin: 10% 0 0 10%;            /*10%(arriba) 0(derecha) 0(abajo) 10%(izq)*/
+    height: auto;
+    transition: all 5s linear;      /*transición lineal*/
+    border-radius: 50px;
+}
+
+.hero-img img:hover {
+    width: 350px;
+    opacity: 0.6;
+}
+
+.hero-text a {
+    display: inline-block;  /*para permitir darle un ancho y alto definido*/
+    background-color: #31494e;
+    border:  1px solid transparent;
+    border-radius: 10px;
+    padding: 15px 30px;
+    margin-left: 5px;
+    font-weight: 500;       /*ancho de fuente*/
+    transition: all .5s ease;
+}
+
+.hero-text a:hover{
+    background-color: transparent;   /*cambio de color de fondo*/ 
+    border: 1px solid wheat;      /*cambio de color de borde*/
+    transform: translateX(5px);     /*se movera horizontalmente 5px*/
+} 
+
+
+/*ICONOS DE REDES / CONTACTO*/
+
+.icons{
+    position: absolute;             /*para que siempre mantenga la misma posición*/
+    top: 50vh;                      /*se mantendra a la mitad de la pantalla*/
+    padding: 0 3%;                  /*0(vertical) 3%(horizontal)*/
+    transform: translateY(-50%);    /*se movera verticalmente*/
+}
+
+.icons i{
+    display: block;
+    margin: 26px 0;             /*26px(vertical), 0px(horizontal)*/
+    font-size: 24px;
+    transition: all .5s ease;
+
+}
+
+.icons i:hover{
+    color: #44737c;
+    transform: translateY(-5px);   /*se moverá verticalmente*/  
+}
+
+.scroll-down{
+    position: absolute;
+    bottom: 6%;
+    right: 3%;
+}
+
+.scroll-down i{
+    display: block;
+    padding: 12px;
+    font-size: 25px;
+    background-color: #21383d;
+    border-radius: 20px;
+    transition: all .5s ease;
+}
+
+.scroll-down i:hover{
+    transform: translateY(5px);
+}
+
+
+/* SOBRE MI */
+.sobre-mi{
+    padding: 0 8%;
+    margin-bottom: 25px;  
+}
+.sobre-mi p{
+    line-height: 1.3;
+}
+
+/**/
+/* CONTACTO */
+.contacto{
+    max-width: 600px;
+    background: transparent;
+    padding: 0 8%;
+    margin-bottom: 25px;
+
+    border-radius: 8px;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+}
+.form-group {
+    margin-bottom: 15px;
+}
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #b4b4b4;
+}
+
+input[type="email"], input[type="text"], textarea {
+    color: #131313;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    resize: vertical; /* Para hacer expandible el textarea */
+}
+
+textarea {
+    min-height: 100px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4c5ec9;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #292072;
+}
+
+/* pop up */
+.popup {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #4c5ec9;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 18px;
+    z-index: 200; /* Para que esté sobre el resto de elementos */
+}
+
+.popup span {
+    color: #00ff00; /* Color verde para la tilde de éxito */
+    font-size: 24px;
+    margin-left: 10px;
+}
+
+
+
+/* _____________________________________________________________________________________________________________ */
+/*Media Querys para Responsive*/
+
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
+    }
+
+    button {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 992px){
+
+    /*hero section*/
+    section{
+        padding: 0 3%;      /*0(vertical), 3%(horizontal)*/
+        transition: .2s;
+    }
+
+    .hero-text{
+        padding-top: 0;
+    }
+
+    .hero-img{
+        text-align: center;
+    }
+
+    .hero-img img{
+        width: 80%;
+        margin: 10% 0 0 10%;    /*arriba, derecha, abajo, izquierda*/
+    }
+
+    .icons{
+        display: none;
+    }
+    .scroll-down{
+        display: none;
+    }
+}
+
+@media(max-width: 768px){
+
+    /*Hacemos visible menu de 3 lineas*/
+    .menu-icon-action{
+        display: block;
+    }
+
+    #menu-icon{
+        display: block;
+    }
+
+    .hero-text{
+        text-align: center;
+        padding-top: 100px;
+    }
+
+    .hero-img img{
+        margin: 0;
+        width: 250px;
+    }
+
+    .hero{
+        height: 100%;
+        gap: 1rem;
+        grid-template-columns: 1fr;
+    }
+
+    .navlist{
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 200px;
+        height: 180px;
+        background-color: #051b20;
+        opacity: .9;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 20px;
+        transition: all .5s ease-out;
+        border-radius: 5px;
+    }
+
+    .navlist a{
+        margin-left: 0;
+        display: block;
+        margin: 7px 0;      /*(vertical)(horizontal)*/
+    }
+
+    /*If(menu-toggle == checked) => selecciono label.menu-icon-action + ul  */
+    /*si esta checked aparece menu*/
+    #menu-toggle:checked + label.menu-icon-action + ul {
+        right: 0;
+    }
+}
+
+/* _________________________________________________________________ */
+/* FOOTER */
+footer{
+    margin: 20px;
+    text-align: center;
+    
+}
